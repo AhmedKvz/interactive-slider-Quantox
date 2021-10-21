@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="data/style.css" />
+  <title>Interactive Pricing Component</title>
+</head>
+
+<body>
+  <main class="container">
+    <section class="section-header">
+      <header>
+        <h1>Simple, traffic-based pricing</h1>
+        <h2>Sign-up for our 30-day trial. No credit card required.</h2>
+      </header>
+    </section>
+
+    <section class="component">
+
+
+      <div class="pageviews-month">
+        <div class="pageviews">
+          <p class="number-of-pageviews">
+            <span id="number-pageviews"></span> Pageviews
+          </p>
+        </div>
+
+        <div class="month">
+          <p class="price-of-month">
+            <span id="price-month"></span> $ /month
+          </p>
+        </div>
+      </div>
+
+      <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange" />
+      </div>
+
+      <div class="monthly-yearly">
+        <div class="monthly">
+          <div class="monthly-billing"><p>Monthly Billing</p></div>
+          <div class="button-monthly">
+            <span class="circle-1"></span>
+            <span class="circle-2"></span>
+          </div>
+        </div>
+
+
+        <div class="yearly">
+          <p>Yearly Billing</p>
+          <p class="discount">25% discount</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="unlimited">
+          <div class="unlimited-web">
+            <span></span>
+            <p> Unlimited websites</p>
+          </div>
+          <div class="data">
+            <span></span>
+            <p>100% data ownership</p>
+          </div>
+          <div class="email-reports">
+            <span></span>
+            <p>Email reports</p>
+          </div>
+        </div>
+
+        <div class="button-start-trial">
+          <button class="btn-trial">Start my trial</button>
+        </div>
+      </footer>
+
+    </section>
+  </main>
+
+    
+   
+</body>
+
+</html>
