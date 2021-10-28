@@ -1,20 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
 
 :root {
-  --background-Color: #f9faff;
-  --full-Slider-Bar: hsl(174, 77%, 80%);
-  --slider-Backround: hsl(174, 86%, 45%);
-  --discount-Background: hsl(14, 92%, 95%);
-  --slideDiscount: hsl(224, 65%, 95%);
-  --discount-Text: hsl(15, 100%, 70%);
-  --cta-Text: hsl(226, 100%, 87%);
-  --header-Text: #848ead;
-  --btn-background-Color: #293356;
-  --btn-color: #becdff;
   --slider-bar: hsl(174, 77%, 80%);
   --slider-background: hsl(174, 86%, 45%);
   --slider-background-transparent: hsl(174, 76%, 60%);
-
+  --slider-background-active: hsl(174, 95%, 31%);
+  --discount-background: hsl(14, 92%, 95%);
+  --discount-text: hsl(15, 100%, 70%);
+  --cta-text: hsl(226, 100%, 87%);
+  --white: hsl(0, 0%, 100%);
+  --main-background: hsl(230, 100%, 99%);
+  --empty-slider-bar: hsl(224, 65%, 95%);
+  --toggle-background: hsl(223, 50%, 87%);
+  --toggle-background-transparent: rgba(205, 215, 238, 0.5);
+  --text: hsl(225, 20%, 60%);
+  --text-background: hsl(227, 35%, 25%);
+  --btn-background: #293356;
+  --btn-trial: #becdff;
+  --pageviews: #848ead;
+  --horizontal: rgb(	236, 240, 251);
 }
 
 * {
@@ -26,7 +30,7 @@
 body {
   font-family: "Manrope", sans-serif;
   height: 100vh;
-  background-color: var(--background-Color);
+  background-color: var(--main-background);
   position: relative;
 }
 
@@ -50,6 +54,7 @@ body {
 }
 
 header {
+  margin-top: -5%;
   margin-bottom: 60%;
   background: url("/images/pattern-circles.svg") no-repeat;
   background-position: 50%;
@@ -78,11 +83,11 @@ header h2 {
   font-weight: 600;
   line-height: 20.49px;
   font-style: normal;
-  color: var(--header-Text);
+  color: var(--text);
 }
 
 .card-component {
-  margin-top: -5%;
+  margin-top: -10%;
   width: 100%;
   max-width: 540px;
   height: 100%;
@@ -90,7 +95,17 @@ header h2 {
   background-color: #ffffff;
   box-shadow: rgba(127, 137, 185, 0.152073);
   border-radius: 8px;
-  padding: 2%;
+  padding-bottom: 20%;
+}
+
+.top-card-section {
+  padding: 5%;
+  padding-top: 5%;
+}
+
+.bottom-card-section {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .pageviews-month {
@@ -98,7 +113,6 @@ header h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 5%;
 }
 
 .pageviews {
@@ -106,70 +120,115 @@ header h2 {
   font-weight: 800;
   line-height: 19.12px;
   letter-spacing: 2px;
-  color: var(--header-Text);
+  color: var(--pageviews);
   text-transform: uppercase;
 }
 
+.month {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .price-of-month {
-  color: var(--header-Text);
+  color: var(--pageviews);
   font-weight: 600;
   font-size: 1rem;
   line-height: 21.86px;
 }
 
+#price-month {
+  color: var(--pageviews);
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 3.416rem;
+}
+
+.slidecontainer {
+  padding-top: 4%;
+}
+
+hr {
+  opacity: 0.1;
+  margin-top: -4%;
+  color: var(--toggle-background);
+}
+
 .slider {
-    background: linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) 50%, hsl(224, 65%, 95%) 50%, hsl(224, 65%, 95%) 100%);
-    border-radius: 8px;
-    height: 8px;
-    width: 100%;
-    outline: none;
-    transition: background 450ms ease-in;
-    -webkit-appearance: none;
-    -webkit-transition: background 450ms ease-in;
-    -moz-transition: background 450ms ease-in;
-    -ms-transition: background 450ms ease-in;
-    -o-transition: background 450ms ease-in;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-  }
-  
- input[type=range]::-webkit-slider-thumb {
+  background: linear-gradient(
+    to right,
+    var(--slider-bar) 0%,
+    var(--slider-bar) 50%,
+    var(--empty-slider-bar) 50%,
+    var(--empty-slider-bar) 100%
+  );
+  border-radius: 8px;
+  height: 8px;
+  width: 100%;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+  -webkit-transition: background 450ms ease-in;
+  -moz-transition: background 450ms ease-in;
+  -ms-transition: background 450ms ease-in;
+  -o-transition: background 450ms ease-in;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 40px;
   height: 40px;
   border: 0;
   background-color: var(--slider-background);
-  background-image: url('../images/icon-slider.svg');
+  background-image: url("../images/icon-slider.svg");
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
   box-shadow: 0px 10px 20px var(--slider-bar), 0px 20px 30px var(--slider-bar);
   cursor: pointer;
-  border-radius:50%;
-  -webkit-border-radius:50%;
-  -moz-border-radius:50%;
-  -ms-border-radius:50%;
-  -o-border-radius:50%;
-  }
-  
-  input[type=range]::-moz-range-thumb {
-    width: 40px;
-    height: 40px;
-    border: 0;    
-    background-color: var(--slider-background);
-    background-image: url('../images/icon-slider.svg');
-    background-repeat: no-repeat;
-    background-position:center;
-    box-shadow: 0px 10px 20px var(--slider-bar), 0px 20px 30px var(--slider-bar);
-    cursor: pointer;
-    border-radius:50%;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    -ms-border-radius:50%;
-    -o-border-radius:50%;
-  }
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background-color: var(--slider-background);
+  background-image: url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 20px var(--slider-bar), 0px 20px 30px var(--slider-bar);
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-progress {
+  background: var(--slider-bar);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background-color: var(--slider-background-transparent);
+}
+.slider::-webkit-slider-thumb:active {
+  background-color: var(--slider-background-active);
+}
+
+.slider::-moz-range-thumb:hover {
+  background-color: var(--slider-background-transparent);
+}
 
 .monthly-yearly {
   display: flex;
@@ -178,10 +237,10 @@ header h2 {
   align-items: center;
   margin-top: 5%;
   padding-bottom: 10%;
-  font-family: 'Manrope';
-  font-size: .75rem;
+  font-family: "Manrope";
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--header-Text);
+  color: var(--text);
 }
 
 input[type="checkbox"] {
@@ -189,7 +248,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + .checkbox-slider {
-  background: #CFD8EF;
+  background: #cfd8ef;
 }
 
 input[type="checkbox"]:checked + .checkbox-slider::before {
@@ -199,10 +258,10 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
 .checkbox-slider {
   width: 2.688rem;
   height: 1.375rem;
-  background-color: #CFD8EF;
+  background-color: var(--toggle-background);
   position: relative;
   display: block;
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
   border-radius: 15px;
   margin-left: 10px;
@@ -210,7 +269,7 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
 }
 
 .checkbox-slider::before {
-  content: '';
+  content: "";
   height: 14px;
   width: 14px;
   border-radius: 50%;
@@ -218,12 +277,12 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
   position: absolute;
   top: 3px;
   left: 2px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .checkbox-slider:hover {
-  background-color: var(--header-Text);
+  background-color: var(--slider-background);
 }
 
 .monthly-yearly {
@@ -232,7 +291,7 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
 
 .monthly {
   font-size: 0.75rem;
-  color: var(--header-Text);
+  color: var(--text);
   margin-left: -5%;
 }
 
@@ -242,14 +301,14 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
   justify-content: center;
   align-items: center;
   font-size: 0.75rem;
-  color: var(--header-Text);
+  color: var(--text);
   margin-left: 3%;
 }
 
 .billing-discount {
-  background-color: var(--discount-Background);
-  color: var(--discount-Text);
-  font-size: .625rem;
+  background-color: var(--discount-background);
+  color: var(--discount-text);
+  font-size: 0.625rem;
   font-weight: 800;
   margin-left: 10px;
   border-radius: 11px;
@@ -261,6 +320,8 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 3%;
+  padding-bottom: 5%;
 }
 
 .unlimited {
@@ -268,30 +329,28 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  font-family: 'Manrope';
-  font-size: .75rem;
-  color: var(--header-Text);
+  font-family: "Manrope";
+  font-size: 0.75rem;
+  color: var(--text);
 }
 
 .unlimited-web {
-  padding-top: 15%;
-  margin-bottom: 5%;
+  padding-top: 20%;
+  margin-bottom: 8%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
 }
 
 .unlimited-web p {
-  margin-left: .625rem;
+  margin-left: 0.625rem;
 }
 
 .icon-check {
   margin-right: 5px;
   height: 100%;
   width: auto;
-
 }
 
 .data {
@@ -303,8 +362,7 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
 }
 
 .data p {
-  margin-left: .625rem;
-
+  margin-left: 0.625rem;
 }
 
 .email-reports {
@@ -312,10 +370,11 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
 }
 
 .email-reports p {
-  margin-left: .625rem;
+  margin-left: 0.625rem;
 }
 
 .button-start-trial {
@@ -323,10 +382,17 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
 }
 
 .btn-trial {
-  width: 10.625em;
-  height: 2.5625em;
-  border-radius: 18px;
+  color: var(--cta-text);
+  background-color: var(--text-background);
+  padding: 10px 50px;
   cursor: pointer;
-  background-color: var(--btn-background-Color);
-  color: var(--btn-color);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.btn-trial:hover {
+  color: var(--white);
 }

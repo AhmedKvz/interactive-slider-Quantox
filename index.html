@@ -1,90 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="data/style.css" />
+    <title>Price Slider</title>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-  <link rel="stylesheet" href="data/style.css" />
-  <title>Price Slider</title>
-</head>
+  <body>
+    <div class="background"></div>
+    <main class="container">
+      <section class="section-header">
+        <header>
+          <h1>Simple, traffic-based pricing</h1>
+          <h2>Sign-up for our 30-day trial. No credit card required.</h2>
+        </header>
+      </section>
 
-<body>
-  <div class="background"></div>
-  <main class="container">
-   
-    <section class="section-header">
-      <header>
-        <h1>Simple, traffic-based pricing</h1>
-        <h2>Sign-up for our 30-day trial. No credit card required.</h2>
-      </header>
-    </section>
+      <section class="card-component">
+        <div class="top-card-section">
+          <div class="pageviews-month">
+            <div class="pageviews">
+              <p class="number-of-pageviews">
+                <span id="number-pageviews"></span> Pageviews
+              </p>
+            </div>
 
-    <section class="card-component">
+            <div class="month">
+              <div>
+                <span id="price-month">$16.00</span>
+              </div>
 
-
-      <div class="pageviews-month">
-        <div class="pageviews">
-          <p class="number-of-pageviews">
-            <span id="number-pageviews"></span> Pageviews
-          </p>
-        </div>
-
-        <div class="month">
-          <p class="price-of-month">
-            <span id="price-month">$16.00</span> / month
-          </p>
-        </div>
-      </div>
-
-
-      <div class="slidecontainer">
-        <input type="range" min="0" max="3" value="2" class="slider" id="mySlider" />
-      </div>
-
-     
-        <div class="monthly-yearly">
-          Monthly Billing
-          <label for="billing" class="checkbox">
-            <input type="checkbox" id="billing">
-            <span class="checkbox-slider"></span>
-          </label>
-          Yearly Billing
-          <div class="billing-discount">
-            <span class="billing-discount">25% discount</span></div>
-          
-        </div>
-     
-
-      <hr>
-
-      <footer class="bottom-info">
-        <div class="unlimited">
-          <div class="unlimited-web">
-            <span><img class="icon-check" src="images/icon-check.svg" alt="icon-check"></span>
-            <p> Unlimited websites</p>
+              <div>
+                <p class="price-of-month">/ month</p>
+              </div>
+            </div>
           </div>
-          <div class="data">
-            <span><img class="icon-check" src="images/icon-check.svg" alt="icon-check"></span>
-            <p>100% data ownership</p>
+
+          <div class="slidecontainer">
+            <input
+              type="range"
+              min="1"
+              max="5"
+              value="3"
+              class="slider"
+              id="mySlider"
+            />
           </div>
-          <div class="email-reports">
-            <span><img class="icon-check" src="images/icon-check.svg" alt="icon-check"></span>
-            <p>Email reports</p>
+
+          <div class="monthly-yearly">
+            Monthly Billing
+            <label for="billing" class="checkbox">
+              <input type="checkbox" id="billing" />
+              <span class="checkbox-slider"></span>
+            </label>
+            Yearly Billing
+            <div class="billing-discount">
+              <span class="billing-discount">25% discount</span>
+            </div>
           </div>
         </div>
 
-        <div class="button-start-trial">
-          <button class="btn-trial">Start my trial</button>
+        <hr />
+
+        <div class="bottom-card-section">
+          <footer class="bottom-info">
+            <div class="unlimited">
+              <div class="unlimited-web">
+                <span
+                  ><img
+                    class="icon-check"
+                    src="images/icon-check.svg"
+                    alt="icon-check"
+                /></span>
+                <p>Unlimited websites</p>
+              </div>
+              <div class="data">
+                <span
+                  ><img
+                    class="icon-check"
+                    src="images/icon-check.svg"
+                    alt="icon-check"
+                /></span>
+                <p>100% data ownership</p>
+              </div>
+              <div class="email-reports">
+                <span
+                  ><img
+                    class="icon-check"
+                    src="images/icon-check.svg"
+                    alt="icon-check"
+                /></span>
+                <p>Email reports</p>
+              </div>
+            </div>
+
+            <div class="button-start-trial">
+              <button class="btn-trial">Start my trial</button>
+            </div>
+          </footer>
         </div>
-      </footer>
+      </section>
+    </main>
 
-    </section>
-  </main>
-
-    
-   <script src="data/script.js"></script>
-</body>
-
+    <script src="data/script.js"></script>
+  </body>
 </html>
