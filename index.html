@@ -7,7 +7,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link rel="stylesheet" href="data/style.css" />
-  <title>Interactive Pricing Component</title>
+  <title>Price Slider</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
       <div class="pageviews-month">
         <div class="pageviews">
           <p class="number-of-pageviews">
-            <span id="number-pageviews">100K</span> Pageviews
+            <span id="number-pageviews"></span> Pageviews
           </p>
         </div>
 
@@ -38,40 +38,39 @@
         </div>
       </div>
 
+
       <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange" />
+        <input type="range" min="0" max="3" value="2" class="slider" id="mySlider" />
       </div>
 
-      <div class="monthly-yearly">
-        <div class="monthly">
-          <div class="monthly-billing"><p>Monthly Billing</p></div>
-          <div class="button-monthly">
-            <span class="circle-1"></span>
-            <span class="circle-2"></span>
-          </div>
+     
+        <div class="monthly-yearly">
+          Monthly Billing
+          <label for="billing" class="checkbox">
+            <input type="checkbox" id="billing">
+            <span class="checkbox-slider"></span>
+          </label>
+          Yearly Billing
+          <div class="billing-discount">
+            <span class="billing-discount">25% discount</span></div>
+          
         </div>
-
-
-        <div class="yearly">
-          <p>Yearly Billing</p>
-          <p class="discount">25% discount</p>
-        </div>
-      </div>
+     
 
       <hr>
 
       <footer class="bottom-info">
         <div class="unlimited">
           <div class="unlimited-web">
-            <span></span>
+            <span><img class="icon-check" src="images/icon-check.svg" alt="icon-check"></span>
             <p> Unlimited websites</p>
           </div>
           <div class="data">
-            <span></span>
+            <span><img class="icon-check" src="images/icon-check.svg" alt="icon-check"></span>
             <p>100% data ownership</p>
           </div>
           <div class="email-reports">
-            <span></span>
+            <span><img class="icon-check" src="images/icon-check.svg" alt="icon-check"></span>
             <p>Email reports</p>
           </div>
         </div>
@@ -85,7 +84,7 @@
   </main>
 
     
-   
+   <script src="data/script.js"></script>
 </body>
 
 </html>
