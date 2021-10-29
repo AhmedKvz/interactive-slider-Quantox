@@ -19,6 +19,7 @@
   --btn-trial: #becdff;
   --pageviews: #848ead;
   --horizontal: rgb(	236, 240, 251);
+  --month-price: #293356;
 }
 
 * {
@@ -31,11 +32,9 @@ body {
   font-family: "Manrope", sans-serif;
   height: 100vh;
   background-color: var(--main-background);
-  position: relative;
 }
 
 .container {
-  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -52,7 +51,7 @@ body {
   background-position: left bottom;
   z-index: -1;
 }
-
+/*********************************** Header *************************************/
 header {
   margin-top: -5%;
   margin-bottom: 60%;
@@ -85,6 +84,9 @@ header h2 {
   font-style: normal;
   color: var(--text);
 }
+
+/*********************************** Card component *************************************/
+
 
 .card-component {
   margin-top: -10%;
@@ -139,11 +141,14 @@ header h2 {
 }
 
 #price-month {
-  color: var(--pageviews);
+  color: var(--month-price);
   font-weight: 800;
   font-size: 2.5rem;
   line-height: 3.416rem;
 }
+
+/*********************************** Slider *************************************/
+
 
 .slidecontainer {
   padding-top: 4%;
@@ -233,7 +238,7 @@ input[type="range"]::-moz-range-progress {
 .monthly-yearly {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: right;
   align-items: center;
   margin-top: 5%;
   padding-bottom: 10%;
@@ -241,6 +246,7 @@ input[type="range"]::-moz-range-progress {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text);
+  margin-right: 5%;
 }
 
 input[type="checkbox"] {
@@ -287,6 +293,7 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
 
 .monthly-yearly {
   padding-top: 5%;
+  margin-left: 30px;
 }
 
 .monthly {
@@ -312,7 +319,11 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
   font-weight: 800;
   margin-left: 10px;
   border-radius: 11px;
-  padding-right: 2px;
+  padding-right: 4px;
+}
+
+.discount-1 {
+  display: none;
 }
 
 .bottom-info {
@@ -396,3 +407,99 @@ input[type="checkbox"]:checked + .checkbox-slider::before {
 .btn-trial:hover {
   color: var(--white);
 }
+
+/************************ Media Queries ********************************/
+@media screen and (max-width: 599px) {
+  .card-component {
+    margin-top: -27%;
+    max-height: 478px;
+  }
+
+  .container {
+    padding-top: 13%;
+  }
+  
+  .pageviews-month {
+    position: relative;
+    flex-direction: column;
+  }
+
+  .month {
+    position: absolute;
+    top: 460%;
+  }
+
+  #price-month {
+    font-size: 2rem;
+  }
+
+  .slidecontainer {
+    padding-top: 4%;
+}
+
+.discount {
+  display: none;
+}
+
+.discount-1 {
+  display: inline;
+}
+
+  .bottom-info {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  .monthly-yearly {
+    margin-top: 7%;
+    padding-top: 15%;
+}
+}
+
+/************************ Phones 414px ********************************/
+@media screen and (max-width: 414px) {
+  
+  .container {
+    padding-top: 13%;
+  }
+
+  header {
+    margin-top: -16%;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  header h2 {
+    font-size: .813rem;
+  }
+
+  .card-component {
+    max-width: 375px;
+  }
+
+  .monthly-yearly {
+    margin-top: 18%;
+    margin-right: -5%;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .card-component {
+    max-width: 330px;
+  }
+
+  .container {
+    padding-top: 13%;
+  }
+
+
+} 
+
+@media screen and (max-width: 360px) {
+  .card-component {
+    max-width: 330px;
+  }
+} 
